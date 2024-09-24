@@ -1,10 +1,9 @@
-/* eslint-disable no-unused-vars */
-// import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
+
 import { Alert, Button, Spinner } from 'flowbite-react';
 import { useState } from 'react';
-import { Link, Navigate, useNavigate, } from 'react-router-dom';
+import { Link, useNavigate, } from 'react-router-dom';
 import { GoogleButton, SignupButton } from '../components/Button';
-// import { EmailInput, NameInput, PasswordInput } from '../components/Input';
+
 // import OAuth from '../components/OAuth';
 
 export default function SignUp() {
@@ -46,16 +45,11 @@ export default function SignUp() {
 
   return (
     <div className='min-h-screen mt-20'>
-      <div className='flex max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5  p-4'>
+      <div className='flex max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5  p-4 md:gap-20'>
 
         {/* left */}
-        <div className='flex-1'>
-          <Link to='/' className='font-bold dark:text-white text-4xl'>
-            <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-              Morning Buds
-            </span> 
-          </Link>
-          <h1 className='m-4 text-xl font-bold text-neutral-600'>Register</h1>
+        <div className='flex-1 items-center flex flex-col justify-self-start'>
+        <h1 className=' px-2 text-3xl underline  font-semibold text-neutral-500'>Register</h1>       
           <p className='text-sm my-5 text-wrap text-neutral-500'>
             Please register with your name, email & password. You can sign up with your email and password
             or with Google.
@@ -64,7 +58,8 @@ export default function SignUp() {
 
         {/* right */}
       <div className='flex-1'>
-      <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
+
+      <form className='flex flex-col gap-4 ' onSubmit={handleSubmit}>
           {/* inputs */}
         <div className="relative p-2 flex items-center justify-center bg-slate-200">
           <label htmlFor="Yourname" className='  text-neutral-500 bg-neutral-50 absolute left-2 -top-2 mx-2 px-2  '>Your Name ... </label>
