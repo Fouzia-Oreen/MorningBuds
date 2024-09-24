@@ -1,15 +1,17 @@
 
 import { Alert, Button, Spinner } from 'flowbite-react';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, } from 'react-router-dom';
-import { GoogleButton, SigninButton, SignupButton } from '../components/Button';
+import { signInFailure, signInStart, signInSuccess } from '../app/user/userSlice';
+import { GoogleButton, SigninButton } from '../components/Button';
 
 // import OAuth from '../components/OAuth';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const {loading, error: errorMessage} = useSelector(state => state.user)
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
@@ -19,11 +21,10 @@ export default function SignIn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if ( !formData.email || !formData.password) {
-          return setErrorMessage('Please fill out all fields.');
+          return dispatch(signInFailure('Please fill out all fields.'))
     }
     try {
-      setLoading(true);
-      setErrorMessage(null);
+      dispatch(signInStart())
       const res = await fetch('/api/auth/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -31,15 +32,14 @@ export default function SignIn() {
       });
       const data = await res.json();
       if (data.success === false) {
-        return setErrorMessage(data.message);
+        dispatch(signInFailure())
       }
-      setLoading(false);
       if(res.ok) {
+        dispatch(signInSuccess(data))
         navigate('/');
       }
     } catch (error) {
-      setErrorMessage(error.message);
-      setLoading(false);
+      dispatch(signInFailure(error.message))
     }
   };
 
@@ -60,11 +60,6 @@ export default function SignIn() {
       <div className='flex-1'>
 
       <form className='flex flex-col gap-4 ' onSubmit={handleSubmit}>
-          {/* inputs */}
-        {/* <div className="relative p-2 flex items-center justify-center bg-slate-200">
-          <label htmlFor="Yourname" className='  text-neutral-500 bg-neutral-50 absolute left-2 -top-2 mx-2 px-2  '>Your Name ... </label>
-          <input type="text" className=' py-2 px-5 rounded-md w-full border-[1px] border-neutral-600 border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 text-neutral-600' id="username" onChange={handleChange}/>  
-        </div> */}
         <div className="relative p-2 flex items-center justify-center bg-slate-200">
           <label htmlFor="Yourname" className='  text-neutral-500 bg-neutral-50 absolute left-2 -top-2 mx-2 px-2  '>Email ... </label>
           <input type="email" className=' py-2 px-5 rounded-md w-full border-[1px] border-neutral-600 border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 text-neutral-600' id="email" onChange={handleChange}/>  
