@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import { Avatar, Button, Dropdown, Navbar, TextInput } from 'flowbite-react';
-import { Search } from 'lucide-react';
+import { Moon, Search, SunMedium } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import { FaMoon, FaSun } from 'react-icons/fa';
 // import { useSelector, useDispatch } from 'react-redux';
@@ -18,37 +18,37 @@ export default function Header() {
 //   const { theme } = useSelector((state) => state.theme);
   const [searchTerm, setSearchTerm] = useState('');
 
-  useEffect(() => {
-    const urlParams = new URLSearchParams(location.search);
-    const searchTermFromUrl = urlParams.get('searchTerm');
-    if (searchTermFromUrl) {
-      setSearchTerm(searchTermFromUrl);
-    }
-  }, [location.search]);
+  // useEffect(() => {
+  //   const urlParams = new URLSearchParams(location.search);
+  //   const searchTermFromUrl = urlParams.get('searchTerm');
+  //   if (searchTermFromUrl) {
+  //     setSearchTerm(searchTermFromUrl);
+  //   }
+  // }, [location.search]);
 
-  const handleSignout = async () => {
-    try {
-      const res = await fetch('/api/user/signout', {
-        method: 'POST',
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        console.log(data.message);
-      } else {
-        // dispatch(signoutSuccess());
-      }
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  // const handleSignout = async () => {
+  //   try {
+  //     const res = await fetch('/api/user/signout', {
+  //       method: 'POST',
+  //     });
+  //     const data = await res.json();
+  //     if (!res.ok) {
+  //       console.log(data.message);
+  //     } else {
+  //       // dispatch(signoutSuccess());
+  //     }
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const urlParams = new URLSearchParams(location.search);
-    urlParams.set('searchTerm', searchTerm);
-    const searchQuery = urlParams.toString();
-    navigate(`/search?${searchQuery}`);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const urlParams = new URLSearchParams(location.search);
+  //   urlParams.set('searchTerm', searchTerm);
+  //   const searchQuery = urlParams.toString();
+  //   navigate(`/search?${searchQuery}`);
+  // };
 
   return (
     <Navbar className='border-b-2'>
@@ -61,7 +61,7 @@ export default function Header() {
         </span>
         Blog
       </Link>
-      <form onSubmit={handleSubmit}>
+      <form >
         <TextInput
           type='text'
           placeholder='Search...'
@@ -79,9 +79,9 @@ export default function Header() {
           className='w-12 h-10 hidden sm:inline'
           color='gray'
           pill
-        //   onClick={() => dispatch(toggleTheme())}
+           onClick={() => dispatch(toggleTheme())}
         >
-          {/* {theme === 'light' ? <SunMedium /> :  <Moon />} */}
+          {theme === 'light' ? <SunMedium /> :  <Moon />}
         </Button>
         {currentUser ? (
           <Dropdown
@@ -91,17 +91,17 @@ export default function Header() {
               <Avatar alt='user' img={currentUser.profilePicture} rounded />
             }
           >
-            {/* <Dropdown.Header>
+            <Dropdown.Header>
               <span className='block text-sm'>@{currentUser.username}</span>
               <span className='block text-sm font-medium truncate'>
                 {currentUser.email}
               </span>
-            </Dropdown.Header> */}
+            </Dropdown.Header>
             <Link to={'/dashboard?tab=profile'}>
               <Dropdown.Item>Profile</Dropdown.Item>
             </Link>
             <Dropdown.Divider />
-            <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+            <Dropdown.Item >Sign out</Dropdown.Item>
           </Dropdown>
         ) : (
           <Link to='/sign-in'>

@@ -5,6 +5,7 @@ import About from './pages/About';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
         {/* <Route path='/projects' element={<Projects />} />
         <Route path='/post/:postSlug' element={<PostPage />} /> */}
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
       
   )
