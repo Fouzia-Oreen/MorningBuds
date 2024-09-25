@@ -14,6 +14,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    profilePicture: {
+        type: String,
+        default: 'https://e7.pngegg.com/pngimages/425/74/png-clipart-computer-icons-user-login-icon-design-media-area-user.png',
+    },
 }, {timestamps: true})
 
 const User = mongoose.model("User", userSchema)

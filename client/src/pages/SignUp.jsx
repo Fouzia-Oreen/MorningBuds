@@ -3,6 +3,7 @@ import { Alert, Button, Spinner } from 'flowbite-react';
 import { useState } from 'react';
 import { Link, useNavigate, } from 'react-router-dom';
 import { GoogleButton, SignupButton } from '../components/Button';
+import OAuth from '../components/OAuth';
 
 // import OAuth from '../components/OAuth';
 
@@ -91,7 +92,7 @@ export default function SignUp() {
               ) : (<GoogleButton  />)}
         </Button>
         </div>
-            {/* <OAuth /> */}
+            <OAuth />
       </form>
           <div className='flex gap-2 text-sm mt-5'>
             <span className='text-neutral-500'>Have an account?</span>
