@@ -30,4 +30,5 @@ const PasswordInput = () => {
   </div>
   )
 }
+
 export {NameInput, EmailInput, PasswordInput }

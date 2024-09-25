@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import googleImg from "../assets/google.png"
-import logo from "../assets/logo.jpg";
+import logo from "../assets/morning-bug.png";
+import { Button } from "flowbite-react";
 
  const SignupButton = () => {
   return (
@@ -30,11 +32,27 @@ const GoogleButton = () => {
 const Logo = () => {
  return (
   <Link to="/">
-    <div className="md:w-[40%] flex items-center gap-4 justify-center">
+    <div className=" flex items-center gap-4 justify-center">
               <img src={logo} className="w-16"/>
               <span className="font-bold text-2xl text-left text-neutral-600">Morning<br/>Bugs</span>
     </div>
   </Link>
  )
 }
-export { GoogleButton, SigninButton, SignupButton , Logo}
+
+const HeaderLogo = () => {
+  return (    
+    <div className="flex items-center gap-3 justify-between">
+              <img src={logo} className="w-[28px] md:w-12 "/>
+              <span className="font-bold text-sm leading-4 md:text-lg text-left text-neutral-600 md:leading-5">Morning<br/>Bugs</span>
+    </div>
+  
+  )
+}
+
+const HeaderButton = (props) => {
+  return (
+      <Button className="bg-neutral-300 rounded-md text-lg font-bold text-neutral-600 hover:bg-neutral-400 transition duration-200 border-[1px] border-neutral-400 hover:text-neutral-700">{props.children}</Button> 
+  )
+}
+export { GoogleButton, SigninButton, SignupButton , Logo, HeaderLogo, HeaderButton}
