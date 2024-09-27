@@ -2,8 +2,10 @@ import { useState } from 'react'
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon } from "react-icons/fa"
 import { Menu, X } from "lucide-react";
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { HeaderButton } from './Button';
+import {useSelector} from "react-redux"
+import { Avatar, Dropdown, DropdownDivider, DropdownHeader, DropdownItem } from 'flowbite-react';
 
 const NavLinks = () => {
     const Links = [
@@ -12,6 +14,8 @@ const NavLinks = () => {
       {name:"Service", link:"/service"},
       {name:"Contact", link:"/contact"},
     ]
+    const path = useLocation().pathname
+    const {currentUser}  = useSelector(state => state.user)
   return (
     <div className='flex-col lg:flex-row flex gap-4  items-center '>
     <ul className='flex flex-col lg:flex-row lg:mr-8'>
@@ -31,8 +35,33 @@ const NavLinks = () => {
         </button>         
     </form>   
     <div className="flex gap-3 my-4 lg:my-0">
-    <Link to="sign-in"><HeaderButton>Sign In</HeaderButton>
-    </Link>
+    {/* <Link to="sign-in"><HeaderButton>Sign In</HeaderButton>
+    </Link> */}
+    {currentUser ? (
+      <>
+      <Dropdown className='bg-red-400'
+      arrowIcon={false}
+      inline  
+      label={<Avatar 
+              alt="user" 
+              img={currentUser.profilePicture} 
+              rounded/>}
+      > 
+      <DropdownHeader className='bg-red-400'>
+        <span className='block text-sm'>@{currentUser.username}</span>
+        <span className='block text-sm font-medium tr'>{currentUser.email}</span>
+      </DropdownHeader>
+      <Link to={'/dashboard?tab=profile'}>
+       <DropdownItem>Profile</DropdownItem>
+      </Link>
+      <DropdownDivider />
+      <DropdownItem>Sign Out</DropdownItem>
+      </Dropdown>
+      </>) : (
+      <>
+      <Link to="sign-in"><HeaderButton>Sign In</HeaderButton></Link>
+      </>)
+    }
     <Link to="sign-up"><HeaderButton>Sign Up</HeaderButton>
     </Link>
     </div>
@@ -60,11 +89,13 @@ const Nav = () => {
       <ThemeToggle />
     </div> */}
     <div className="flex w-[75px] justify-end lg:hidden">
-      <button className='text-neutral-600' onClick={toggleNavbar}>{isOpen ? <X /> : <Menu />}</button>
+      <button className='text-neutral-600' onClick={toggleNavbar}>{isOpen ? <X /> : <Menu />}
+      </button>
     </div>
   </nav>
-  {isOpen && (<div className='flex flex-col items-center basis-full py-4'
-  ><NavLinks /></div>)}
+  {isOpen && (<div className='flex flex-col items-center basis-full py-4'>
+    <NavLinks />
+  </div>)}
   </>
   )
 }

@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     },
     profilePicture: {
         type: String,
-        default: 'https://e7.pngegg.com/pngimages/425/74/png-clipart-computer-icons-user-login-icon-design-media-area-user.png',
+        default:"../asset/avatar.png" ,
     },
 }, {timestamps: true})
 
