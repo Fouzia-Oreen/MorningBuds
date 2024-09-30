@@ -37,7 +37,7 @@ const OAuth = () => {
         }
     }
   return (
-    <button className='px-4' onClick={handleGoogleClick}>
+    <button className='w-full' onClick={handleGoogleClick}>
       <GoogleButton />
     </button>
   )

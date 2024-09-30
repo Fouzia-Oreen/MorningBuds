@@ -2,7 +2,7 @@
 import { Alert, Button, Spinner } from 'flowbite-react';
 import { useState } from 'react';
 import { Link, useNavigate, } from 'react-router-dom';
-import { GoogleButton, SignupButton } from '../components/Button';
+import { SignupButton } from '../components/Button';
 import OAuth from '../components/OAuth';
 
 // import OAuth from '../components/OAuth';
@@ -50,8 +50,8 @@ export default function SignUp() {
 
         {/* left */}
         <div className='flex-1 items-center flex flex-col justify-self-start'>
-        <h1 className=' px-2 text-3xl underline  font-semibold text-neutral-500'>Register</h1>       
-          <p className='text-sm my-5 text-wrap text-neutral-500'>
+        <h1 className=' px-2 text-3xl underline  font-semibold '>Register</h1>       
+          <p className='text-sm my-5 text-wrap '>
             Please register with your name, email & password. You can sign up with your email and password
             or with Google.
           </p>
@@ -62,18 +62,20 @@ export default function SignUp() {
 
       <form className='flex flex-col gap-4 ' onSubmit={handleSubmit}>
           {/* inputs */}
-        <div className="relative p-2 flex items-center justify-center bg-slate-200">
-          <label htmlFor="Yourname" className='  text-neutral-500 bg-neutral-50 absolute left-2 -top-2 mx-2 px-2  '>Your Name ... </label>
-          <input type="text" className=' py-2 px-5 rounded-md w-full border-[1px] border-neutral-600 border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 text-neutral-600' id="username" onChange={handleChange}/>  
+        <div className="relative p-2 flex items-center justify-center bg-[#b1ccf3] dark:bg-[#191d24]">
+          <label htmlFor="Yourname" className='  dark:bg-[#191d24] bg-[#b1ccf3] absolute left-2 -top-2 mx-2 px-2  '>Full Name ... </label>
+          <input type="text" className=' py-2 px-5 rounded-md w-full border-[1px] bg-[#b1ccf3] dark:bg-[#191d24] dark:border-[#6f7580] border-opacity-40 border-[#192938b2] dark:border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 ' id="username" onChange={handleChange}/>  
         </div>
-        <div className="relative p-2 flex items-center justify-center bg-slate-200">
-          <label htmlFor="Yourname" className='  text-neutral-500 bg-neutral-50 absolute left-2 -top-2 mx-2 px-2  '>Email ... </label>
-          <input type="email" className=' py-2 px-5 rounded-md w-full border-[1px] border-neutral-600 border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 text-neutral-600' id="email" onChange={handleChange}/>  
+        <div className="relative p-2 flex items-center justify-center bg-[#b1ccf3] dark:bg-[#191d24]">
+        <label htmlFor="Youremail" className='  dark:bg-[#191d24] bg-[#b1ccf3] absolute left-2 -top-2 mx-2 px-2  '>Email ... </label>
+        <input type="email" className=' py-2 px-5 rounded-md w-full border-[1px] bg-[#b1ccf3] dark:bg-[#191d24] dark:border-[#6f7580] border-opacity-40 border-[#192938b2] dark:border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 ' id="email" onChange={handleChange}/>    
         </div>
-        <div className="relative p-2 flex items-center justify-center bg-slate-200">
-          <label htmlFor="Yourname" className='  text-neutral-500 bg-neutral-50 absolute left-2 -top-2 mx-2 px-2 '>Password ... </label>
-          <input type="password" className=' py-2 px-5 rounded-md w-full border-[1px] border-neutral-600 border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 text-neutral-600' id="password" onChange={handleChange}/>  
+
+        <div className="relative p-2 flex items-center justify-center ">
+        <label htmlFor="Youremail" className='  dark:bg-[#191d24] bg-[#b1ccf3] absolute left-2 -top-2 mx-2 px-2  '>Password ... </label>
+        <input type="password" className=' py-2 px-5 rounded-md w-full border-[1px] bg-[#b1ccf3] dark:bg-[#191d24] dark:border-[#6f7580] border-opacity-40 border-[#192938b2] dark:border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 ' id="password" onChange={handleChange}/>  
         </div>
+        
         <div className='flex flex-col'>
         <Button class="w-full" type="submit" disabled={loading} > 
               { loading ? (
@@ -89,10 +91,10 @@ export default function SignUp() {
               <Spinner size='sm' />
               <span className='pl-3'>Loading...</span>
               </>
-              ) : (<GoogleButton  />)}
+              ) : ( <OAuth />)}
         </Button>
         </div>
-            <OAuth />
+        
       </form>
           <div className='flex gap-2 text-sm mt-5'>
             <span className='text-neutral-500'>Have an account?</span>
@@ -101,7 +103,7 @@ export default function SignUp() {
             </Link>
           </div>
           {errorMessage && (
-            <Alert className='mt-5' color='failure'>
+            <Alert className='mt-5' color='failure' backgroundColor="none">
               {errorMessage}
             </Alert>
           )}

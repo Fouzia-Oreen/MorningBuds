@@ -1,5 +1,26 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+:root {
+    --clr-1:#191d24;
+    --clr-2:#2e3239;
+    --clr-3:#45484e;
+    --clr-4:#8f9195;
+    --clr-5:#2b90e3;
+    --clr-6:#72b0f8;
+    --clr-7:#b1ccf3;
+}
 
+.bg-cyan-700 {
+    --tw-bg-opacity: 0;
+    background-color: transparent !important;
+    border-bottom: none !important;
+}
+@media (min-width: 768px) {
+
+    .md\:text-white {
+        --tw-text-opacity: 0;
+        color: transparent !important;
+    }
+}
+.bg-red-100 {
+    --tw-bg-opacity: 0;
+    background-color: transparent !important;
 }

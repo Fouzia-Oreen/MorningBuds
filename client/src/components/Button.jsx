@@ -6,14 +6,14 @@ import { Button } from "flowbite-react";
 
  const SignupButton = () => {
   return (
-    <div className="bg-neutral-300 py-2 px-4  rounded-md  text-lg font-medium text-neutral-600 hover:bg-neutral-400 hover:text-neutral-700 transition duration-200 border-[1px] border-neutral-400 w-full" >
+    <div className="bg-[#d1dff0] py-2 px-4  rounded-md  text-lg font-medium      w-full" >
         Sign Up
     </div>
   )
 }
  const SigninButton = () => {
   return (
-    <div className="bg-neutral-300 py-2 px-4  rounded-md w-full text-lg font-medium text-neutral-600 hover:bg-neutral-400 transition duration-200 border-[1px] border-neutral-400 hover:text-neutral-700">
+    <div className="bg-[#d1dff0] py-2 px-4  rounded-md w-full text-lg font-medium   ">
         Sign In
     </div>
   )
@@ -22,7 +22,7 @@ import { Button } from "flowbite-react";
 
 const GoogleButton = () => {
   return (
-    <div className=" py-2 px-4 flex items-center justify-center gap-4 rounded-md w-full bg-neutral-300  text-lg text-neutral-600 hover:bg-neutral-400 transition duration-200 border-[1px] font-medium border-neutral-400 hover:text-neutral-700">
+    <div className=" py-2 px-4 flex items-center justify-center gap-4 rounded-md w-full bg-[#d1dff0]  text-lg   font-medium ">
     Signup with google
     <img src={googleImg} alt="googleImg" height={25} width={25}/>
     </div>
@@ -34,7 +34,7 @@ const Logo = () => {
   <Link to="/">
     <div className=" flex items-center gap-4 justify-center">
               <img src={logo} className="w-16"/>
-              <span className="font-bold text-2xl text-left text-neutral-600">Morning<br/>Bugs</span>
+              <span className="font-bold text-2xl text-left dark:text-[#8f9195] text-[#18222cc4]">Morning<br/>Bugs</span>
     </div>
   </Link>
  )
@@ -44,7 +44,7 @@ const HeaderLogo = () => {
   return (    
     <div className="flex items-center gap-3 justify-between">
               <img src={logo} className="w-[28px] md:w-12 "/>
-              <span className="font-bold text-sm leading-4 md:text-lg text-left text-neutral-600 md:leading-5">Morning<br/>Bugs</span>
+              <span className="font-bold text-sm leading-4 md:text-lg text-left dark:text-[#8f9195] md:leading-5">Morning<br/>Bugs</span>
     </div>
   
   )

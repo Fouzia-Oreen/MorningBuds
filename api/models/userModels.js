@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -17,6 +17,7 @@ const userSchema = new mongoose.Schema({
     profilePicture: {
         type: String,
         default:"../asset/avatar.png" ,
+
     },
 }, {timestamps: true})
 
