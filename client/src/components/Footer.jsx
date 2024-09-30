@@ -65,7 +65,7 @@ const Footer = () => {
           </div>   
       </div>
 
-      <div className='w-full flex lg:flex-row flex-col items-center gap-4 justify-center border-t-[1px] border-[#18222c1e] mt-6 pt-6 font-semibold md:flex-row md:justify-evenly flex-shrink border-opacity-70'>
+      <div className='w-full flex lg:flex-row flex-col items-center gap-4 justify-center border-t-[1px] border-[#18222c1e] dark:border-[#39404769] mt-6 pt-6 font-semibold md:flex-row md:justify-evenly flex-shrink border-opacity-70'>
           <Link to='#'>Codoreen.io <span>{new Date().getFullYear()}</span></Link>
           <div className="flex gap-6 sm:justify-center  text-lg">
           {footerIcon.map((icon) => <Link to={icon.href} key ={icon} className=" transition duration-200 hover:dark:text-[#8f9195] hover:text-[#293c4dd5] ">{icon.icon}</Link>

@@ -24,3 +24,7 @@
     --tw-bg-opacity: 0;
     background-color: transparent !important;
 }
+.dark\:bg-cyan-600:is(.dark *) {
+    --tw-bg-opacity: 0;
+    background-color: transparent !important;
+}

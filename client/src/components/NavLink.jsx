@@ -58,7 +58,7 @@ export default function Header() {
         <HeaderLogo /> 
       </Link>
       <form className="hidden lg:inline relative w-[300px] items-center justify-between mt-4 lg:mt-0" onSubmit={handleSubmit}>
-        <input type="text" className='py-[4px] px-2 rounded-md w-full border-[1px] border-[#83b5fa] dark:border-[#9ba3b4]  outline-none  border-opacity-60 transition duration-200 text-[#1f2a39]  dark:bg-transparent focus:outline-none' id="email" placeholder="Search ..."/> 
+        <input type="text" className='py-[4px] px-2 rounded-md w-full border-[1px] border-[#83b5fa] dark:border-[#9ba3b4]  outline-none  dark:border-opacity-60 transition duration-200 text-[#1f2a39]  dark:bg-transparent focus:outline-none' id="email" placeholder="Search ..."/> 
         <button className="absolute right-2 top-[.5rem]"><AiOutlineSearch className="text-[#384d6b] font-bold text-lg hover:dark:text-[#8f9195]"/>
         </button>         
     </form> 
@@ -113,8 +113,8 @@ export default function Header() {
           <Link to='/contact'>Contact</Link>
         </Navbar.Link>
         <div className='my-6 flex items-center justify-center gap-8 lg:hidden'>
-        <Link to="/sign-in"><HeaderButton>Sign In</HeaderButton></Link>
-        <Link to="/sign-up"><HeaderButton>Sign Up</HeaderButton></Link>
+        <Link to="/sign-in" className="bg-[#d1dff0] rounded-md"><HeaderButton >Sign In</HeaderButton></Link>
+        <Link to="/sign-up" className="bg-[#d1dff0] rounded-md"><HeaderButton>Sign Up</HeaderButton></Link>
         </div>
       </Navbar.Collapse>
     </Navbar>
