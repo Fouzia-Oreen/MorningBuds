@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toggleTheme } from '../app/theme/themeSlice';
 import { signoutSuccess } from '../app/user/userSlice';
-import { HeaderButton, HeaderLogo } from './Button';
+import { HeaderButton, HeaderLogo, SigninButton, SignupButton } from './Button';
 
 export default function Header() {
   const path = useLocation().pathname;
@@ -113,8 +113,8 @@ export default function Header() {
           <Link to='/contact'>Contact</Link>
         </Navbar.Link>
         <div className='my-6 flex items-center justify-center gap-8 lg:hidden'>
-        <Link to="/sign-in" className="bg-[#d1dff0] rounded-md"><HeaderButton >Sign In</HeaderButton></Link>
-        <Link to="/sign-up" className="bg-[#d1dff0] rounded-md"><HeaderButton>Sign Up</HeaderButton></Link>
+        <Link to="/sign-in" ><SigninButton /></Link>
+        <Link to="/sign-up" className=" border-[1px] rounded-md"><SignupButton/></Link>
         </div>
       </Navbar.Collapse>
     </Navbar>

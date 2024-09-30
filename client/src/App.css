@@ -7,7 +7,12 @@
     --clr-6:#72b0f8;
     --clr-7:#b1ccf3;
 }
-
+*, ::before, ::after {
+    background:transparent;
+}
+*:hover, ::before:hover, ::after:hover {
+    background:transparent;
+}
 .bg-cyan-700 {
     --tw-bg-opacity: 0;
     background-color: transparent !important;
