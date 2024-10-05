@@ -6,6 +6,7 @@ import userRoute from './routes/userRoute.js';
 const app = express()
 dotenv.config();
 
+// adding mongoose
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
   console.log('Mongo db is connected');

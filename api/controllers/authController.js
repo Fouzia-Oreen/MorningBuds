@@ -1,7 +1,7 @@
-import User from "../models/userModels.js"
-import bcryptjs from "bcryptjs"
+import bcryptjs from "bcryptjs";
+import jwt from "jsonwebtoken";
+import User from "../models/userModels.js";
 import { errorHandler } from "../utils/error.js";
-import jwt from "jsonwebtoken"
 
 export const signup = async (req, res, next) => {
     const {username, email, password} = req.body
@@ -51,8 +51,8 @@ export const signin = async (req, res, next) => {
         process.env.JWT_SECRET
       );
   
-      const { password: pass, ...rest } = validUser._doc;
-  
+      // seperate th password from other attributes
+      const { password: pass, ...rest } = validUser._doc; 
       res
         .status(200)
         .cookie('access_token', token, {

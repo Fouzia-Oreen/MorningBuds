@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toggleTheme } from '../app/theme/themeSlice';
 import { signoutSuccess } from '../app/user/userSlice';
-import { HeaderButton, HeaderLogo, SigninButton, SignupButton } from './Button';
+import { HeaderLogo, SigninButton, SignupButton } from './Button';
 
 export default function Header() {
   const path = useLocation().pathname;
@@ -66,11 +66,9 @@ export default function Header() {
         <div className='hidden lg:inline-flex gap-8'>
         {currentUser ? (
           <Dropdown
-            arrowIcon={false}
-            inline
-            label={
-              <Avatar alt='user' inline img={currentUser.profilePicture} rounded />
-            }
+          arrowIcon={false}
+          inline
+          label={<Avatar rounded  alt='user' img={currentUser.profilePicture}/>}
           >
             <Dropdown.Header>
               <span className='block text-sm'>@{currentUser.username}</span>
@@ -87,12 +85,10 @@ export default function Header() {
           
         ) : (
           <Link to='/sign-in'>
-            <Button >
-              Sign In
-            </Button>
+            <SigninButton  />    
           </Link>
         )}
-    <Button color="gray" className="hidden lg:flex w-8 h-8 rounded-full text-[#103a5c]  items-center p-1 bg-[#b1ccf3] "  onClick={() => dispatch(toggleTheme())}>
+    <Button color="gray" className="hidden lg:flex w-8 h-8 rounded-full my-auto text-[#103a5c]  items-center bg-[#b1ccf3] "  onClick={() => dispatch(toggleTheme())}>
       {theme === 'light' ? <FaSun /> : <FaMoon />}
     </Button>
         </div>
@@ -120,3 +116,4 @@ export default function Header() {
     </Navbar>
   );
 }
+//alt='user' inline img={currentUser.profilePicture} rounded 

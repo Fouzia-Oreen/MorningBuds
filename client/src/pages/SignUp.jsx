@@ -1,5 +1,5 @@
 
-import { Alert, Button, Spinner } from 'flowbite-react';
+import { Alert, Button, Label, Spinner } from 'flowbite-react';
 import { useState } from 'react';
 import { Link, useNavigate, } from 'react-router-dom';
 import { SignupButton } from '../components/Button';
@@ -45,34 +45,32 @@ export default function SignUp() {
   };
 
   return (
-    <div className='min-h-screen mt-20'>
-      <div className='flex max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5  p-4 md:gap-20'>
+    <div className='min-h-screen  flex pb-4'>
+      <div className='flex max-w-3xl mx-auto flex-col md:flex-row justify-center items-center gap-2  px-4 md:gap-20'>
 
         {/* left */}
-        <div className='flex-1 items-center flex flex-col justify-self-start'>
+        <div className='flex-1 items-center flex flex-col justify-center'>
         <h1 className=' px-2 text-3xl underline  font-semibold '>Register</h1>       
-          <p className='text-sm my-5 text-wrap '>
+          <p className='text-sm my-5 text-wrap text-center'>
             Please register with your name, email & password. You can sign up with your email and password
             or with Google.
           </p>
         </div>
 
         {/* right */}
-      <div className='flex-1'>
-
-      <form className='flex flex-col gap-4 ' onSubmit={handleSubmit}>
+      <div className='flex-1'>  
+      <form className='flex flex-col gap-4  ' onSubmit={handleSubmit}>
           {/* inputs */}
         <div className="relative p-2 flex items-center justify-center bg-[#b1ccf3] dark:bg-[#191d24]">
-          <label htmlFor="Yourname" className='  dark:bg-[#191d24] bg-[#b1ccf3] absolute left-2 -top-2 mx-2 px-2  '>Full Name ... </label>
+          <Label  className='dark:bg-[#191d24] dark:text-[#6f7580]  bg-[#b1ccf3] absolute left-2 -top-[6px] mx-2 px-1  ' value='Name . . .' />
           <input type="text" className=' py-2 px-5 rounded-md w-full border-[1px] bg-[#b1ccf3] dark:bg-[#191d24] dark:border-[#6f7580] border-opacity-40 border-[#192938b2] dark:border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 ' id="username" onChange={handleChange}/>  
         </div>
         <div className="relative p-2 flex items-center justify-center bg-[#b1ccf3] dark:bg-[#191d24]">
-        <label htmlFor="Youremail" className='  dark:bg-[#191d24] bg-[#b1ccf3] absolute left-2 -top-2 mx-2 px-2  '>Email ... </label>
+        <Label  className='dark:bg-[#191d24] bg-[#b1ccf3] dark:text-[#6f7580]  absolute left-2 -top-[6px] mx-2 px-1  ' value='Email . . .' />
         <input type="email" className=' py-2 px-5 rounded-md w-full border-[1px] bg-[#b1ccf3] dark:bg-[#191d24] dark:border-[#6f7580] border-opacity-40 border-[#192938b2] dark:border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 ' id="email" onChange={handleChange}/>    
         </div>
-
-        <div className="relative p-2 flex items-center justify-center ">
-        <label htmlFor="Youremail" className='  dark:bg-[#191d24] bg-[#b1ccf3] absolute left-2 -top-2 mx-2 px-2  '>Password ... </label>
+        <div className="relative p-2 flex items-center justify-center bg-[#b1ccf3] dark:bg-[#191d24]">
+        <Label  className='dark:bg-[#191d24] dark:text-[#6f7580]  bg-[#b1ccf3] absolute left-2 -top-[6px] mx-2 px-1 ' value='Password . . .' />
         <input type="password" className=' py-2 px-5 rounded-md w-full border-[1px] bg-[#b1ccf3] dark:bg-[#191d24] dark:border-[#6f7580] border-opacity-40 border-[#192938b2] dark:border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 ' id="password" onChange={handleChange}/>  
         </div>
         

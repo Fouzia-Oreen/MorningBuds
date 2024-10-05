@@ -49,7 +49,7 @@ const footerIcon = [
 
 const Footer = () => {
   return (
-    <div className="border-t-[2px] border-[#83b5fa8a] py-6 lg:px-8 dark:border-[#8f9195]">
+    <div className="border-t-[2px] border-[#83b5fa8a] py-6 lg:px-8 xl:px-20 dark:border-[#3b3c3d]  dark:bg-[#101318] bg-[#a0c6fa]">
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
       <Link to="/"><Logo /></Link>
           <div>

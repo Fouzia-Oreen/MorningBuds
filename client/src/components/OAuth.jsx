@@ -1,4 +1,3 @@
-
 import { app } from '../firebase'
 import { GoogleButton } from './Button'
 import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth"

@@ -1,2 +1,3 @@
 export  const test = (req, res) => {
-    res.send({message: "API testing"})}
+    res.send({message: "API testing"})
+}
