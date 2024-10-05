@@ -88,9 +88,9 @@ export default function Header() {
             <SigninButton  />    
           </Link>
         )}
-    <Button color="gray" className="hidden lg:flex w-8 h-8 rounded-full my-auto text-[#103a5c]  items-center bg-[#b1ccf3] "  onClick={() => dispatch(toggleTheme())}>
+    <button color="gray" className="hidden lg:flex w-8 h-8 rounded-full my-auto dark:text-[#7a838a]  items-center "  onClick={() => dispatch(toggleTheme())}>
       {theme === 'light' ? <FaSun /> : <FaMoon />}
-    </Button>
+    </button>
         </div>
 
         <NavbarToggle />
