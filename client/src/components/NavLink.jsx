@@ -1,4 +1,4 @@
-import { Avatar, Button, Dropdown, Navbar, NavbarToggle } from 'flowbite-react';
+import { Avatar, Dropdown, Navbar, NavbarToggle } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa';
