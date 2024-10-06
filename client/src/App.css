@@ -1,11 +1,12 @@
 :root {
-    --clr-1:#191d24;
-    --clr-2:#2e3239;
-    --clr-3:#45484e;
-    --clr-4:#8f9195;
-    --clr-5:#2b90e3;
-    --clr-6:#72b0f8;
-    --clr-7:#b1ccf3;
+   --a: #28465a;
+   --a: #467DA1;
+   --a: #61ABE7;
+   --a: #8DC2EE;
+   --a: #A3CEF1;
+   --a: #B9DAF4;
+   
+
 }
 *, ::before, ::after {
     background:transparent;
@@ -30,6 +31,14 @@
     background-color: transparent !important;
 }
 .dark\:bg-cyan-600:is(.dark *) {
+    --tw-bg-opacity: 0;
+    background-color: transparent !important;
+}
+.bg-gray-50 {
+    --tw-bg-opacity: 1;
+    background-color: transparent !important;
+}
+.dark\:bg-gray-800:is(.dark *) {
     --tw-bg-opacity: 0;
     background-color: transparent !important;
 }

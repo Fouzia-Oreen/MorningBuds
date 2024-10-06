@@ -50,7 +50,7 @@ export default function Header() {
   };
 
   return (
-    <Navbar className='border-b-[1px] dark:bg-[#101318] bg-[#a0c6fa] dark:border-b-[#45484e] border-b-[#83b5fa]'>
+    <Navbar className='border-b-[1px] dark:bg-gray-800 bg-[#a0c6fa] dark:border-b-gray-700 border-b-[#83b5fa]'>
       <Link
         to='/'
         className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold'

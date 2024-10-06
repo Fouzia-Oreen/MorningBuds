@@ -4,7 +4,6 @@ import DashSidebar from "../components/DashSidebar";
 import DashProfile from "../components/DashProfile";
 
 
-
 const Dashboard = () => {
   const location = useLocation();
   const [tab, setTab] = useState('');
@@ -19,12 +18,12 @@ const Dashboard = () => {
   
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
-      <div className="md:w-56 lg:w-72">
+      <div className="md:w-56 lg:w-72 ">
       {/* sidebar */}
       <DashSidebar />
       </div>
 
-      <div className="">
+      <div className="w-full">
       {/* profile ... */}
       {tab === 'profile' && <DashProfile />}
       </div>

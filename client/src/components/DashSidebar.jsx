@@ -6,6 +6,7 @@ import { HiArrowSmRight, HiChartPie, HiInbox, HiOutlineArrowSmRight, HiShoppingB
 import { useLocation } from "react-router-dom";
 
 
+
 const DashSidebar = () => {
     const location = useLocation();
     const [tab, setTab] = useState('');
@@ -16,51 +17,80 @@ const DashSidebar = () => {
         setTab(tabFromUrl)
       }
       console.log(tabFromUrl);
-    }, [location.search])
+    }, [location.search]);
+
+    // const data = [
+    //   {   
+    //       icon: <HiUser /> ,
+    //       title: "Profile",
+    //       link: "/dashboard?tab=profile"
+    //   },
+    //   {   icon: <HiChartPie />,
+    //       title: "Dashboard",
+    //       link: "/dashboard"
+    //   },
+    //   {   icon: <HiViewBoards/>,
+    //       title: "Classes",
+    //       link: "/classes"
+    //   },
+    //   {   icon: <HiInbox/>,
+    //     title: "Inbox",
+    //     link: "/classes"
+    //   },
+    //   {   icon: <HiViewBoards/>,
+    //     title: "Classes",
+    //     link: "/classes"
+    //   },
+    //   {   icon: <HiViewBoards/>,
+    //     title: "Classes",
+    //     link: "/classes"
+    //   }
+    // ]
   return (
-    <Sidebar className="w-full md:w-56 lg:w-72">
-      <Sidebar.Items>
-        <Sidebar.ItemGroup>           
-          <Sidebar.Item href="/dashboard?tab=profile" icon={HiUser} active={ tab === "profile" } label={"User"} labelColor='dark'>
+    // {/* all sidebar items */}
+    <Sidebar className="w-full md:w-56 lg:w-72 h-full border-r-[1px] border-light-600 dark:border-dark-100 bg-light-500 dark:bg-dark-300"> 
+      <Sidebar.Items className="my-6 ">
+        <Sidebar.ItemGroup>          
+          <Sidebar.Item href="/dashboard?tab=profile" icon={HiUser} active={ tab === "profile" } label={"User"} labelColor='light'  className="bg-[#91bff5] hover:bg-[#79b3f7] text-[#093a72] dark:bg-[#45484e] dark:hover:bg-[#555961] dark:text-[#adb0b4] font-semibold">
             Profile
           </Sidebar.Item>      
-          <Sidebar.Item href="/dashboard"  icon={HiChartPie} >
+          <Sidebar.Item href="/dashboard"  icon={HiChartPie} className="bg-[#91bff5] hover:bg-[#79b3f7] text-[#093a72] dark:bg-[#45484e] dark:hover:bg-[#555961] dark:text-[#adb0b4] font-semibold" >
             Dashboard
           </Sidebar.Item>
-          <Sidebar.Item href="/about" icon={HiViewBoards}>
+          <Sidebar.Item href="/about" icon={HiViewBoards} className="bg-[#91bff5] hover:bg-[#79b3f7] text-[#093a72] dark:bg-[#45484e] dark:hover:bg-[#555961] dark:text-[#adb0b4] font-semibold">
             Kanban
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiInbox}>
+          <Sidebar.Item href="#" icon={HiInbox} className="bg-[#91bff5] hover:bg-[#79b3f7] text-[#093a72] dark:bg-[#45484e] dark:hover:bg-[#555961] dark:text-[#adb0b4] font-semibold">
             Inbox
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiShoppingBag}>
+          <Sidebar.Item href="#" icon={HiShoppingBag} className="bg-[#91bff5] hover:bg-[#79b3f7] text-[#093a72] dark:bg-[#45484e] dark:hover:bg-[#555961] dark:text-[#adb0b4] font-semibold">
             Products
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiArrowSmRight}>
+          <Sidebar.Item href="#" icon={HiArrowSmRight}  className="bg-[#91bff5] hover:bg-[#79b3f7] text-[#093a72] dark:bg-[#45484e] dark:hover:bg-[#555961] dark:text-[#adb0b4] font-semibold ">
             Sign In
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiOutlineArrowSmRight} className="cursor-pointer">
+          <Sidebar.Item href="#" icon={HiOutlineArrowSmRight} className="bg-[#91bff5] hover:bg-[#79b3f7] text-[#093a72] dark:bg-[#45484e] dark:hover:bg-[#555961] dark:text-[#adb0b4] font-semibold" >
             Sign Out
           </Sidebar.Item>
         </Sidebar.ItemGroup>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
+          <Sidebar.Item href="#" icon={HiChartPie} className="bg-[#91bff5] hover:bg-[#79b3f7] text-[#093a72] dark:bg-[#45484e] dark:hover:bg-[#555961] dark:text-[#adb0b4] font-semibold">
             Upgrade to Pro
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiViewBoards}>
+          <Sidebar.Item href="#" icon={HiViewBoards} className="bg-[#91bff5] hover:bg-[#79b3f7] text-[#093a72] dark:bg-[#45484e] dark:hover:bg-[#555961] dark:text-[#adb0b4] font-semibold">
             Documentation
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={BiBuoy}>
+          <Sidebar.Item href="#" icon={BiBuoy} className="bg-[#91bff5] hover:bg-[#79b3f7] text-[#093a72] dark:bg-[#45484e] dark:hover:bg-[#555961] dark:text-[#adb0b4] font-semibold">
             Help
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>
-      <Sidebar.CTA>
-        <div className="mb-3 flex items-center">
-          <Badge color="warning">Beta</Badge>
+      <Sidebar.CTA className="bg-light-500 dark:bg-dark-200 rounded-lg border-[1px] border-light-600 dark:border-dark-100">
+        <div className="mb-3 flex items-center ">
+          <Badge className="bg-light-50 text-dark-100 font-semibold">Notofication</Badge>
           <button
             aria-label="Close"
-            className="-m-1.5 ml-auto inline-flex h-6 w-6 rounded-lg bg-gray-100 p-1 text-cyan-900 hover:bg-gray-200 focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600"
+            className="-m-1.5 ml-auto inline-flex h-6 w-6 rounded-lg bg-light-600 p-1 text-white   dark:bg-dark-100 dark:text-dark-500 "
             type="button"
           >
             <svg
@@ -78,12 +108,13 @@ const DashSidebar = () => {
             </svg>
           </button>
         </div>
-        <div className="mb-3 text-sm text-cyan-900 dark:text-gray-400">
-          Preview the new Flowbite dashboard navigation! You can turn the new navigation off for a limited time in your
-          profile.
+        <div className="mb-3 text-sm ">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Saepe non, enim libero vitae dolore 
+          quam molestias 
         </div>
         <a
-          className="text-sm text-cyan-900 underline hover:text-cyan-800 dark:text-gray-400 dark:hover:text-gray-300"
+          className="text-sm text-light-800 dark:text-dark-50 underline font-semibold "
           href="#"
         >
           Turn new navigation off

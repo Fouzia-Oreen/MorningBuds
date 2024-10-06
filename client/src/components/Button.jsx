@@ -1,8 +1,15 @@
+
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
-import googleImg from "../assets/google.png"
-import logo from "../assets/morning-bug.png";
 import { Button } from "flowbite-react";
+import { Link } from "react-router-dom";
+import googleImg from "../assets/google.png";
+import logo from "../assets/morning-bug.png";
+
+const CommonButton = ({props}) => {
+  <div className=" bg-light-600 hover:bg-light-700 text-white dark:bg-dark-100 hover:dark:bg-dark-200 dark:text-dark-500 duration-200 transition py-2 px-4  rounded-md  text-md font-medium " >
+        {props}
+    </div>
+}
 
  const SignupButton = () => {
   return (
@@ -55,4 +62,5 @@ const HeaderButton = (props) => {
       <Button className="bg-neutral-300 rounded-md text-lg font-bold text-neutral-600 hover:bg-neutral-400 transition duration-200 border-[1px] border-neutral-400 hover:text-neutral-700">{props.children}</Button> 
   )
 }
-export { GoogleButton, SigninButton, SignupButton , Logo, HeaderLogo, HeaderButton}
+export { CommonButton, GoogleButton, HeaderButton, HeaderLogo, Logo, SigninButton, SignupButton };
+

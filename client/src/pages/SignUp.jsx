@@ -65,10 +65,12 @@ export default function SignUp() {
           <Label  className='dark:bg-[#191d24] dark:text-[#6f7580]  bg-[#b1ccf3] absolute left-2 -top-[6px] mx-2 px-1  ' value='Name . . .' />
           <input type="text" className=' py-2 px-5 rounded-md w-full border-[1px] bg-[#b1ccf3] dark:bg-[#191d24] dark:border-[#6f7580] border-opacity-40 border-[#192938b2] dark:border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 ' id="username" onChange={handleChange}/>  
         </div>
+
         <div className="relative p-2 flex items-center justify-center bg-[#b1ccf3] dark:bg-[#191d24]">
-        <Label  className='dark:bg-[#191d24] bg-[#b1ccf3] dark:text-[#6f7580]  absolute left-2 -top-[6px] mx-2 px-1  ' value='Email . . .' />
+        <Label  className='dark:bg-[#191d24] bg-[#b1ccf3] dark:text-[#6f7580]  absolute left-2 -top-[6px] mx-2 px-1 ' value='Email . . .' />
         <input type="email" className=' py-2 px-5 rounded-md w-full border-[1px] bg-[#b1ccf3] dark:bg-[#191d24] dark:border-[#6f7580] border-opacity-40 border-[#192938b2] dark:border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 ' id="email" onChange={handleChange}/>    
         </div>
+
         <div className="relative p-2 flex items-center justify-center bg-[#b1ccf3] dark:bg-[#191d24]">
         <Label  className='dark:bg-[#191d24] dark:text-[#6f7580]  bg-[#b1ccf3] absolute left-2 -top-[6px] mx-2 px-1 ' value='Password . . .' />
         <input type="password" className=' py-2 px-5 rounded-md w-full border-[1px] bg-[#b1ccf3] dark:bg-[#191d24] dark:border-[#6f7580] border-opacity-40 border-[#192938b2] dark:border-opacity-40 outline-none  focus:border-opacity-70 transition duration-200 ' id="password" onChange={handleChange}/>  
