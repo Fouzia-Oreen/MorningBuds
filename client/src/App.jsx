@@ -12,6 +12,8 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Dashboard from './pages/Dashboard';
 import Contact from './pages/Contact';
+import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute';
+import CreatePost from './pages/CreatePost';
 
 function App() {
 
@@ -30,10 +32,11 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route path='/dashboard' element={<Dashboard />} />
         </Route>
-        {/* <Route element={<OnlyAdminPrivateRoute />}>
+        
+        <Route element={<OnlyAdminPrivateRoute />}>
           <Route path='/create-post' element={<CreatePost />} />
-          <Route path='/update-post/:postId' element={<UpdatePost />} />
-        </Route> */}
+          {/* <Route path='/update-post/:postId' element={<UpdatePost />} /> */}
+        </Route>
 
         <Route path='/contact' element={<Contact />} />
         {/* <Route path='/post/:postSlug' element={<PostPage />} /> */}

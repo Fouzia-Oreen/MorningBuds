@@ -1,4 +1,5 @@
-
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import {
   getDownloadURL,
   getStorage,
@@ -11,7 +12,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { useDispatch, useSelector } from 'react-redux';
-import { app } from '../firebase';
+import { Link } from "react-router-dom";
 import {
   deleteUserFailure,
   deleteUserStart,
@@ -21,10 +22,12 @@ import {
   updateStart,
   updateSuccess,
 } from '../app/user/userSlice';
+import { app } from '../firebase';
 //import {CommonButton} from "./Button"
 
 const DashProfile = () => {
     const { currentUser, error, loading } = useSelector((state) => state.user);
+   
     const [imageFile, setImageFile] = useState(null);
     const [imageFileUrl, setImageFileUrl] = useState(null);
     const [imageFileUploadProgress, setImageFileUploadProgress] = useState(null);
@@ -201,7 +204,14 @@ const DashProfile = () => {
           <TextInput type="text" id="username" placeholder="username" defaultValue={currentUser.username} class="w-full rounded-md dark:bg-dark-200 bg-light-100 border-light-700 dark:border-dark-50" onChange={handleChange}/>
           <TextInput type="email" id="email" placeholder="email" defaultValue={currentUser.email}  class="w-full rounded-md dark:bg-dark-200 bg-light-100 border-light-700 dark:border-dark-50" onChange={handleChange}/>
           <TextInput type="password" id="password" placeholder="password"  class="w-full rounded-md dark:bg-dark-200 bg-light-100 border-light-700 dark:border-dark-50" onChange={handleChange}/>
-          <button className=" bg-light-600 hover:bg-light-700 text-white dark:bg-dark-100 hover:dark:bg-dark-200 dark:text-dark-500 duration-200 transition py-2 px-4  rounded-md  text-md font-medium ">Update</button>
+          <Button type="button" className=" bg-light-600 hover:bg-light-700 text-white dark:bg-dark-100 hover:dark:bg-dark-200 dark:text-dark-500 duration-200 transition rounded-md  text-md font-medium "  disabled={loading || imageFileUploading}>{loading ? "Loading" : "Update"}</Button>
+          {
+            currentUser.isAdmin && (
+              <Link to={'/create-post'}>
+              <Button type='button' className=' bg-light-800 hover:bg-light-700 text-white dark:bg-dark-100 hover:dark:bg-dark-200 dark:text-dark-500 duration-200 transition  rounded-md  text-md font-medium'>Create a post</Button>
+              </Link>
+            )
+          }
           </div>
         </form>
         <div className="flex items-center justify-between gap-12 font-semibold">
@@ -253,5 +263,5 @@ const DashProfile = () => {
 }
 
 export default DashProfile
-// 6096BA
+
 
