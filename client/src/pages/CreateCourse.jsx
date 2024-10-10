@@ -124,7 +124,7 @@ export default function CreateCourse() {
           />
           <Button
             type='button'
-            className="bg-light-600 dark:bg-dark-300 dark:text-dark-50 "
+            className="bg-light-600 dark:bg-dark-300 dark:text-dark-500 "
             size='sm'
             onClick={handleUpdloadImage}
             disabled={imageUploadProgress}
@@ -152,7 +152,7 @@ export default function CreateCourse() {
         <ReactQuill
           theme='snow'
           placeholder='Write something...'
-          className='h-72 mb-12 border-[1px] border-light-600 dark:border-dark-300 dark'
+          className='h-72 mb-12 border-[1px] border-light-600 dark:border-dark-300 dark:text-dark-500'
           required
           onChange={(value) => {
             setFormData({ ...formData, content: value });
