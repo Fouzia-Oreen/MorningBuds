@@ -10,10 +10,10 @@ import PrivateRoute from './components/PrivateRoute';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Dashboard from './pages/Dashboard';
-import Contact from './pages/Contact';
 import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute';
-import CreatePost from './pages/CreatePost';
+import Contact from './pages/Contact';
+import CreateCourse from './pages/CreateCourse';
+import Dashboard from './pages/Dashboard';
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
         </Route>
         
         <Route element={<OnlyAdminPrivateRoute />}>
-          <Route path='/create-post' element={<CreatePost />} />
+          <Route path='/create-post' element={<CreateCourse />} />
           {/* <Route path='/update-post/:postId' element={<UpdatePost />} /> */}
         </Route>
 

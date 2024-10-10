@@ -18,9 +18,9 @@
   --lightClr-6: #254664;
 }
 
-/* body {
+body {
   height: 100vh;
-} */
+}
 
 .ql-editor {
   font-size: 1.05rem;
@@ -55,3 +55,18 @@
 .dark .post-content a {
   color: red;
 }
+ .ql-toolbar.ql-snow {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #aeb0b46b;
+}
+
+.ql-container.ql-snow {
+  border: none;
+}
+
+/*
+.ql-snow .ql-stroke {
+  stroke: #858585;
+} */

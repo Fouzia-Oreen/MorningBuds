@@ -168,7 +168,7 @@ const DashProfile = () => {
 
     return (
       <section className='h-screen mx-auto  flex  items-center justify-center  bg-slate-300 dark:bg-dark-200 '>
-        <div className='py-6 w-full md:w-[70%] md:h-[80%] flex flex-col items-center gap-4 bg-light-500 dark:bg-dark-300 rounded-lg border-[1px] border-light-600 dark:border-dark-100'>
+        <div className='py-6 w-full md:w-[70%] md:h-[90%] flex flex-col items-center gap-4 bg-light-500 dark:bg-dark-300 rounded-lg border-[1px] border-light-600 dark:border-dark-100'>
         <h1 className='font-bold text-3xl my-7 dark:text-dark-100'>Profile</h1>
         <form className='flex flex-col gap-12 w-full items-center' onSubmit={handleSubmit}>
           <input type="file" accept="image/*" onChange={handleImageChange} ref={filePickerRef} className='border-light-700 dark:border-dark-200 border-[1px] rounded-md'/>

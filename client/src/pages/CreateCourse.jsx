@@ -14,7 +14,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function CreatePost() {
+export default function CreateCourse() {
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
@@ -84,8 +84,8 @@ export default function CreatePost() {
     }
   };
   return (
-    <div className='p-3 max-w-3xl mx-auto min-h-screen'>
-      <h1 className='text-center text-3xl my-7 font-semibold'>Create a post</h1>
+    <div className='p-3 max-w-3xl mx-auto min-h-screen md:w-full'>
+      <h1 className='text-center text-3xl my-7 font-semibold'>Create Course</h1>
       <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
         <div className='flex flex-col gap-4 sm:flex-row justify-between'>
           <TextInput
@@ -93,34 +93,30 @@ export default function CreatePost() {
             placeholder='Title'
             required
             id='title'
-            className='flex-1'
+            className='flex-1 rounded-lg border-[1px] border-light-600  dark:border-dark-300 outline-none focus:outline-none'
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
             }
           />
           <Select
-          class="bg-light-50 rounded-md"
+          class="bg-light-500 dark:bg-dark-400 dark:text-dark-50 rounded-md  font-semibold "
             onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
-              
             }
           >
             <option value='uncategorized'>Select a category</option>
-            <option value='javascript'>Maths</option>
-            <option value='reactjs'>Social Science</option>
-            <option value='nextjs'>English</option>
-            <option value='nextjs'>Computer</option>
-            <option value='nextjs'>French</option>
-            <option value='nextjs'>Physics</option>
-            <option value='nextjs'>Chemistry</option>
-            <option value='nextjs'>Chemistry</option>
-            <option value='nextjs'>History</option>
-
-
+            <option value='Maths'>Maths</option>
+            <option value='Social Science'>Social Science</option>
+            <option value='English'>English</option>
+            <option value='Computer'>Computer</option>
+            <option value='French'>French</option>
+            <option value='Physics'>Physics</option>
+            <option value='Chemistry'>Chemistry</option>
+            <option value='History'>History</option>
 
           </Select>
         </div>
-        <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
+        <div className='flex gap-4 items-center justify-between border-4 border-light-600 dark:border-dark-300 border-dotted p-3'>
           <FileInput
             type='file'
             accept='image/*'
@@ -128,9 +124,8 @@ export default function CreatePost() {
           />
           <Button
             type='button'
-            gradientDuoTone='purpleToBlue'
+            className="bg-light-600 dark:bg-dark-300 dark:text-dark-50 "
             size='sm'
-            outline
             onClick={handleUpdloadImage}
             disabled={imageUploadProgress}
           >
@@ -157,13 +152,13 @@ export default function CreatePost() {
         <ReactQuill
           theme='snow'
           placeholder='Write something...'
-          className='h-72 mb-12'
+          className='h-72 mb-12 border-[1px] border-light-600 dark:border-dark-300 dark'
           required
           onChange={(value) => {
             setFormData({ ...formData, content: value });
           }}
         />
-        <Button type='submit' gradientDuoTone='purpleToPink'>
+        <Button type='submit' className='bg-light-600 dark:bg-dark-300'>
           Publish
         </Button>
         {publishError && (
